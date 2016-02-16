@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="lance.openNativeApp" version="0.0.1">
+    <name>OpenNativeApp</name>
+    <description>Open Native App</description>
+    <license>MIT</license>
+    <keywords>native,cordova,android</keywords>
+    <js-module src="www/OpenNativeApp.js" name="OpenNativeApp">
+        <clobbers target="OpenNativeApp"/>
+    </js-module>
+    <!-- android -->
+    <platform name="android">
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="OpenNativeApp">
+                <param name="android-package" value="lance.cordova.plugins.OpenNativeApp"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/OpenNativeApp.java" target-dir="src/lance/cordova/plugins"/>
+
+    </platform>
+</plugin>
